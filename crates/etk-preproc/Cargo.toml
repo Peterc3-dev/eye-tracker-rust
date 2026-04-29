@@ -1,0 +1,11 @@
+[package]
+name = "etk-preproc"
+description = "Frame preprocessing — JPEG decode, ROI crop, normalize, GPU upload"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+# scaffold — see PLAN.md §2.2

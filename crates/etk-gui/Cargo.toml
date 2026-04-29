@@ -1,0 +1,11 @@
+[package]
+name = "etk-gui"
+description = "egui calibration UI and live preview"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+# scaffold — see PLAN.md §2.6

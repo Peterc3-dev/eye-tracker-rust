@@ -1,0 +1,11 @@
+[package]
+name = "bench-infer"
+description = "Phase 0 — measure burn-wgpu Vulkan inference latency for EllSeg"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+# scaffold — see PLAN.md §6 Phase 0

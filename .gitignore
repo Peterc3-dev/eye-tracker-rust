@@ -1,0 +1,36 @@
+# Rust
+/target/
+**/target/
+Cargo.lock.bak
+*.rs.bk
+
+# IDE
+/.idea/
+/.vscode/
+*.iml
+
+# Models (use Git LFS once added)
+/models/*.onnx
+/models/*.pt
+/models/*.safetensors
+
+# Local config
+/config.local.toml
+.env
+.env.local
+
+# Build artifacts
+*.so
+*.dylib
+*.dll
+**/*.profraw
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Captured frames / scratch
+/scratch/
+/captures/
+*.flame
+*.svg

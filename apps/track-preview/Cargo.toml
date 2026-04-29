@@ -1,0 +1,11 @@
+[package]
+name = "track-preview"
+description = "Phase 2-3 — live inference with mask + ellipse + glint overlay"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+# scaffold — see PLAN.md §6 Phase 2-3

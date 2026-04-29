@@ -1,0 +1,73 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/etk-capture",
+    "crates/etk-preproc",
+    "crates/etk-infer",
+    "crates/etk-geom",
+    "crates/etk-output",
+    "crates/etk-config",
+    "crates/etk-gui",
+    "apps/bench-infer",
+    "apps/capture-preview",
+    "apps/track-preview",
+    "apps/eye-tracker",
+]
+
+[workspace.package]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Peterc3-dev/eye-tracker-rust"
+version = "0.1.0"
+authors = ["Peterc3-dev"]
+
+[workspace.dependencies]
+# Async + concurrency
+tokio = { version = "1.52", features = ["rt-multi-thread", "net", "io-util", "macros", "sync", "time"] }
+crossbeam-queue = "0.3"
+bytes = "1.6"
+
+# Inference — Vulkan via wgpu (per PLAN §2.3)
+burn = { version = "0.21", features = ["wgpu", "vision"] }
+burn-import = "0.21"
+# Alternate inference engine (per PLAN §2.3 fallback)
+wonnx = "0.5"
+
+# Image / tensor
+image = "0.25"
+imageproc = "0.26"
+ndarray = "0.17"
+
+# Cursor injection — libei primary, uinput fallback (per PLAN §2.4)
+reis = "0.6"
+ashpd = "0.13"
+evdev = "0.13"
+
+# Config + live reload
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+notify = "9.0.0-rc.3"
+
+# GUI
+egui = "0.34"
+eframe = { version = "0.34", features = ["wgpu"] }
+
+# Logging + perf
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-flame = "0.2"
+
+# CLI + errors
+clap = { version = "4.6", features = ["derive"] }
+anyhow = "1.0"
+thiserror = "2.0"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
+
+[profile.release-with-debug]
+inherits = "release"
+debug = true
+strip = false

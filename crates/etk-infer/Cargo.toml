@@ -1,0 +1,11 @@
+[package]
+name = "etk-infer"
+description = "Pupil/glint inference engine — burn-wgpu (Vulkan) primary, wonnx alternate"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+# scaffold — see PLAN.md §2.3
